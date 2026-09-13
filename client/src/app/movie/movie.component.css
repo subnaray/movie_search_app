@@ -1,0 +1,106 @@
+.movie-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  background: #f4f6f8;
+  box-sizing: border-box;
+}
+
+.movie-card {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.movie-header h1 {
+  margin: 0;
+  font-size: 36px;
+  color: #222;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #666;
+  font-size: 16px;
+}
+
+.user-section {
+  margin-top: 35px;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.user-section h2 {
+  margin: 10px 0 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+.user-info {
+  text-align: left;
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
+
+.user-info p {
+  margin: 12px 0;
+  color: #333;
+}
+
+.user-info span {
+  display: inline-block;
+  width: 70px;
+  font-weight: bold;
+  color: #555;
+}
+
+.logout-button,
+.login-button {
+  border: none;
+  border-radius: 6px;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.logout-button {
+  background: #dc3545;
+  color: white;
+}
+
+.logout-button:hover {
+  background: #b02a37;
+}
+
+.login-button {
+  background: #0069d9;
+  color: white;
+}
+
+.login-button:hover {
+  background: #0056b3;
+}
+
+.login-section {
+  margin-top: 30px;
+}

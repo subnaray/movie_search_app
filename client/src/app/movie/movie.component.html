@@ -1,0 +1,66 @@
+<div class="movie-page">
+
+  <div class="movie-card">
+
+    <div class="movie-header">
+      <h1>🎬 Movie Search</h1>
+      <p class="subtitle">Welcome to the Movie Search App</p>
+    </div>
+
+    <div *ngIf="auth.isAuthenticated$ | async as isAuthenticated">
+
+      <!-- Logged in -->
+      <div *ngIf="isAuthenticated">
+
+        <div *ngIf="auth.user$ | async as user" class="user-section">
+
+          <div class="avatar">
+            <img
+              *ngIf="user.picture"
+              src="assets/images/movie-user.png"
+              alt="Movie User"
+            />
+          </div>
+
+          <h2>Welcome!</h2>
+
+          <div class="user-info">
+            <p>
+              <span>Name</span>
+              {{ getDisplayName(user.name)}}
+            </p>
+
+            <p>
+              <span>Email</span>
+              {{ user.email }}
+            </p>
+          </div>
+
+          <button
+            class="logout-button"
+            (click)="logout()">
+            Logout
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- Not logged in -->
+      <div *ngIf="!isAuthenticated" class="login-section">
+
+        <p>Please log in to use the Movie Search application.</p>
+
+        <button
+          class="login-button"
+          (click)="login()">
+          Login
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
