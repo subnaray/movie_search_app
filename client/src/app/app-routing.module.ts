@@ -1,34 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@auth0/auth0-angular';
 
-import { AuthGuard } from './guards/auth.guard';
-import { LoginComponent } from './auth/login/login.component';
-import { LogoutComponent } from './auth/logout/logout.component';
 import { MovieComponent } from './movie/movie.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'logout',
-    component: LogoutComponent
-  },
-  {
-    path: 'movies',
-    component: MovieComponent,
-    canActivate: [AuthGuard]
-  }
+  { path: '', redirectTo: 'movies', pathMatch: 'full' },
+  { path: 'movies', component: MovieComponent, canActivate: [AuthGuard] },
+  { path: 'movies/:id', component: MovieDetailsComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: 'movies' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
