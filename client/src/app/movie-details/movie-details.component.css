@@ -1,0 +1,98 @@
+:host {
+  display: block;
+}
+
+.details-page {
+  min-height: 100vh;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.details-shell {
+  width: min(1000px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.details-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.details-card > img {
+  width: 100%;
+  border-radius: 0.85rem;
+  background: #334155;
+}
+
+.eyebrow {
+  color: #93c5fd;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.plot {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+dl {
+  margin-top: 2rem;
+}
+
+dl > div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid #334155;
+}
+
+dt {
+  color: #94a3b8;
+}
+
+dd {
+  margin: 0;
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 0.65rem;
+  background: #1e293b;
+}
+
+.message.error {
+  border: 1px solid #7f1d1d;
+  background: #450a0a;
+}
+
+@media (max-width: 720px) {
+  .details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .details-card > img {
+    max-width: 320px;
+  }
+
+  dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}

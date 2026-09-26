@@ -1,0 +1,28 @@
+<div class="details-page">
+  <main class="details-shell">
+    <a class="back-link" routerLink="/movies">← Back to search</a>
+
+    <p *ngIf="loading" class="message">Loading movie details…</p>
+    <p *ngIf="errorMessage" class="message error">{{ errorMessage }}</p>
+
+    <article *ngIf="movie" class="details-card">
+      <img [src]="posterUrl()" [alt]="movie.Title + ' poster'" />
+
+      <div class="details-content">
+        <p class="eyebrow">{{ movie.Type | titlecase }} · {{ movie.Year }}</p>
+        <h1>{{ movie.Title }}</h1>
+        <p class="plot">{{ movie.Plot }}</p>
+
+        <dl>
+          <div><dt>Genre</dt><dd>{{ movie.Genre }}</dd></div>
+          <div><dt>Director</dt><dd>{{ movie.Director }}</dd></div>
+          <div><dt>Actors</dt><dd>{{ movie.Actors }}</dd></div>
+          <div><dt>Runtime</dt><dd>{{ movie.Runtime }}</dd></div>
+          <div><dt>Released</dt><dd>{{ movie.Released }}</dd></div>
+          <div><dt>IMDb rating</dt><dd>{{ movie.imdbRating }}</dd></div>
+          <div><dt>Awards</dt><dd>{{ movie.Awards }}</dd></div>
+        </dl>
+      </div>
+    </article>
+  </main>
+</div>

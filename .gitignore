@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Angular
+client/node_modules/
+client/dist/
+client/.angular/
+client/coverage/
+
+# Spring Boot / Maven
+server/target/
+
+# Secrets / local environment
+.env
+.env.*
+!.env.example
